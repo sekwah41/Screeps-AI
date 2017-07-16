@@ -72,8 +72,13 @@ module.exports = {
         else{
             //creep.say("STORING");
             storage = Game.getObjectById(creep.memory.storagePoint);
-            if(creep.transfer(storage, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+
+            let tranferRet = creep.transfer(storage, RESOURCE_ENERGY);
+            if(tranferRet === ERR_NOT_IN_RANGE) {
                 creep.moveTo(storage, {visualizePathStyle: {stroke: '#78ff79'}});
+            }
+            else if(tranferRet === ERR_INVALID_TARGET){
+                creep.moveTo(Game.flags.IdlePoint, {visualizePathStyle: {stroke: '#ff8200'}});
             }
         }
 

@@ -1,0 +1,42 @@
+They seem to use http://underscorejs.org/
+
+STUFF YOU NEED TO MAKE ATM
+FLAGS
+IdlePointBuilder
+IdlePoint
+
+
+STUFF YOU NEED TO CONTROL
+Choosing where stuff will be built
+
+
+TODO make miner and transport combo (miners focus on mining, transport focuses on moving back
+Also work on making it so they store stuff in storages and there are a few power units going around powering structures.
+Add counts for each to vary how many are needed.
+E.g. atm all units can mine move and carry. miners dont need to move they just need to get into position so they should only have
+one or two move parts and the rest mine. Then the rest should be there to distribute the units. Expand on getting more energy mines.
+Then looking on how to move it back to the base.
+//
+Also need to take a look at placing defences near locations automatically or manually.
+Due to cpu time you are probably best letting defences work on maintaining a base.
+Maybe record all your blocks and walls and replace them if they are destroyed
+Also make units store tasks and make it so they ask a logic thing something every update if they dont need one. that or make
+each task have a fail or cancel function e.g. the structure no longer needs power.
+
+Also look at how all of the structures work.
+
+USE THE MEMORY A LOT MORE
+Also get it to check for closes stuff and work based on it (also storing the ids)
+
+
+Make it cache the path too and redo it if it cant move rather than do the path every time
+
+Need to make creeps check to see if its target still exists sometimes. Also move out of the way maybe
+Also need to clean code up a bit for the harvesters and builders.
+Then work on specialised transport and mining creeps then make other creeps get stuff from the storages.
+If mining creeps dont need to stop you stop wasting ticks and dont need as expensive of a creep to fully use a resource
+
+Simpler roles that do specifics should also enable roles to take up less processor power for each useful role.
+Also look at saving paths once the number of creeps has been reduces. E.g. check the shortest path (see if you can find
+if with ignoring creeps in the way) then make it pathfind if it cant make its way down the path but make it find its way
+to further down the path so it takes less power.

@@ -47,8 +47,12 @@ module.exports = {
         }
         if(creep.memory.repairing) {
             let target = Game.getObjectById(creep.memory.repairPoint);
-            if(creep.build(target) === ERR_NOT_IN_RANGE) {
+            let repairRet = creep.repair(target);
+            if(repairRet === ERR_NOT_IN_RANGE) {
                 creep.moveTo(target, {visualizePathStyle: {stroke: '#ff00e3'}});
+            }
+            else if(repairRet === ERR_INVALID_TARGET) {
+                getHealTarget(creep);
             }
         }
         else {
@@ -73,6 +77,9 @@ function getHealTarget(creep) {
     });
 
     let lowestHealth = _.min(site, s => s.hits);
+
+    console.log(lowestHealth.structureType, lowestHealth.hits < lowestHealth.hitsMax, lowestHealth.hits, lowestHealth.hitsMax);
+
     if(lowestHealth !== null) {
         creep.memory.repairPoint = lowestHealth.id;
     }

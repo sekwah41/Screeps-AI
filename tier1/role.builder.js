@@ -70,8 +70,12 @@ module.exports = {
             //var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
             let target = Game.getObjectById(creep.memory.buildPoint);
             //creep.say("IM MINING", true);
-            if(creep.build(target) === ERR_NOT_IN_RANGE) {
+            let buildRet = creep.build(target);
+            if(buildRet === ERR_NOT_IN_RANGE) {
                 creep.moveTo(target, {visualizePathStyle: {stroke: '#ff00e3'}});
+            }
+            else if(buildRet === ERR_INVALID_TARGET){
+                creep.moveTo(Game.flags.IdlePointBuilder, {visualizePathStyle: {stroke: '#ff8200'}});
             }
         }
         else {
