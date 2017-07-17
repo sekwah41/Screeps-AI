@@ -27,12 +27,12 @@ module.exports = {
                 console.log("Path blocked");
             }
             /*let source = creep.pos.findClosestByRange(FIND_SOURCES);
-            if(source != null) {
-                creep.memory.harvestPoint = source.id;
-            }
-            else {
-                console.log("Path blocked");
-            }*/
+             if(source != null) {
+             creep.memory.harvestPoint = source.id;
+             }
+             else {
+             console.log("Path blocked");
+             }*/
         }
 
         if(creep.memory.building && creep.carry.energy === 0) {
