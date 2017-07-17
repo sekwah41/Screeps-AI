@@ -1,6 +1,8 @@
 # Screeps
 My screeps AI code
 
+I am mostly going to edit it in the actual browser as it has a pretty nice editor. However I will be using here for backups of code and generally in case anyone has any interest for whatever reason.
+
 If you want to play around with this feel free too ;)
 
 Its not something im doing seriously. Just something im spending a little time on every now and then to think about game AI and efficiency as well as just for fun.
